@@ -44,4 +44,12 @@ RSpec.describe Ingredient, type: :model do
 
     expect(ingredient).not_to be_valid
   end
+
+  it 'has many user_ingredients' do
+    expect(valid_ingredient).to respond_to(:user_ingredients)
+  end
+
+  it 'has many users' do
+    expect(valid_ingredient).to respond_to(:users)
+  end
 end

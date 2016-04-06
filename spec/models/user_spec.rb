@@ -45,4 +45,12 @@ RSpec.describe User, type: :model do
 
     expect(user).not_to be_valid
   end
+
+  it 'has many user_ingredients' do
+    expect(valid_user).to respond_to(:user_ingredients)
+  end
+
+  it 'has many ingredients' do
+    expect(valid_user).to respond_to(:ingredients)
+  end
 end
