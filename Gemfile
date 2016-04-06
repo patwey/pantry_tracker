@@ -13,6 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'database_cleaner'
 end
 
 group :development do
