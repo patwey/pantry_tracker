@@ -10,9 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
-gem 'react-rails', '~> 1.6.0'
-gem 'responders'
-gem 'active_model_serializers'
 
 group :development, :test do
   gem 'pry'
