@@ -8,8 +8,11 @@
   </head>
 
   <body>
-
-  <%= yield %>
-
+    <main>
+      <%= render partial: 'layouts/sidebar' %>
+      <div class='container'>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

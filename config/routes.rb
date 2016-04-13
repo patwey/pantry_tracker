@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   get '/dashboard', to: 'users#show'
+
+  get '/pantry', to: 'user_ingredients#index'
+
+  resources :user_ingredients, only: [:new, :create]
 end

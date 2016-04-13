@@ -6,6 +6,9 @@ class Seed
   end
 
   def self.create_users
+    User.create!(name: 'Pat Wey',
+                 email: 'pat@example.com',
+                 password: 'password') # for development
     20.times do
       User.create!(name: Faker::Name.name,
                    email: Faker::Internet.email,

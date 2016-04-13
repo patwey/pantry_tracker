@@ -1,14 +1,17 @@
 <div class='container'>
   <div class='row'>
-    <div class='col s12'>
-      <h1>Welcome, <%= @user.name %></h1>
+    <div class='col s4'>
+      <h1>Pantry</h1>
+    </div>
+
+    <div class='col s1 offset-s6'>
+      <%= link_to 'add', new_user_ingredient_path, class: 'btn-floating btn-large blue waves-effect waves-light',
+                                                   id: 'new-user-ingredient-button'%>
     </div>
   </div>
 
   <div class='row'>
     <div class='col s12'>
-      <h3>My Pantry</h3>
-
       <table class='highlight'>
         <thead>
           <tr>
@@ -17,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @user.pantry_snapshot.each do |ingredient| %>
+          <% @user_ingredients.each do |ingredient| %>
             <tr>
               <td><%= ingredient.name %></td>
               <td><%= ingredient.amount %> <%= ingredient.units %></td>
@@ -30,7 +33,7 @@
 
   <div class='row'>
     <div class='col s12'>
-      <%= link_to 'Go to Pantry', pantry_path%>
+      <%= link_to 'Back to Dashboard', dashboard_path%>
     </div>
   </div>
 </div>

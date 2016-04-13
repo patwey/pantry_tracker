@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
                     uniqueness: true,
                     format: { with: /\A[\w._]+@[\w]+.[\w]+\z/,
                               message: 'improper email format (e.g. johndoe@example.com)' }
+
+  def pantry_snapshot
+    UserIngredient.where(user_id: id).includes(:ingredient)
+  end
 end
