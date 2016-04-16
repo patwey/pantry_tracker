@@ -4,12 +4,11 @@ class UserIngredientsController < ApplicationController
   end
 
   def new
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.where.not(id: current_user.ingredients.pluck(:id))
     @user_ingredient = UserIngredient.new
   end
 
   def create
-    # TODO: If user already has ingredient, update it instead of adding another instance of it.
     user_ingredient = current_user.user_ingredients.new(user_ingredient_params)
 
     if user_ingredient.save
